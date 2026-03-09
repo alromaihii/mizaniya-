@@ -336,7 +336,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);font
     <div style="font-size:13px;color:var(--text-muted);line-height:1.6;">Set this up once and AlSalam Bank messages auto-update your budget.</div>
   </div>
   <div class="slabel">Deep Link</div>
-  <div class="code" id="dlink">mizaniya://add?amount=AMOUNT&merchant=MERCHANT&balance=BALANCE</div>
+  <div class="code" id="dlink">mizaniya://add?amount=AMOUNT&merchant=MERCHANT</div>
   <button class="cpbtn" onclick="copyLink()">📋 Copy Link</button>
   <div class="slabel" style="margin-top:18px;">Step-by-Step</div>
   <div class="card">
@@ -345,7 +345,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);font
     <div class="srow"><div class="sbdg">3</div><div><div class="stit">Set Trigger</div><div class="sdsc">Sender = AlSalam Bank number. Message Contains: <div class="code">debited BD</div></div></div></div>
     <div class="srow"><div class="sbdg">4</div><div><div class="stit">Get Message Body</div><div class="sdsc">Add action: <strong>Get Details of Messages</strong> → select <em>Body</em>.</div></div></div>
     <div class="srow"><div class="sbdg">5</div><div><div class="stit">Match Text (Regex)</div><div class="sdsc">Add <strong>Match Text</strong>:<div class="code">BD ([0-9.]+).*?At: (.+?)\n.*Balance: BD ([0-9.]+)</div></div></div></div>
-    <div class="srow"><div class="sbdg">6</div><div><div class="stit">Open Mizaniya</div><div class="sdsc">Add <strong>Open URLs</strong>:<div class="code">mizaniya://add?amount=[Match1]&merchant=[Match2]&balance=[Match3]</div></div></div></div>
+    <div class="srow"><div class="sbdg">6</div><div><div class="stit">Open Mizaniya</div><div class="sdsc">Add <strong>Open URLs</strong>:<div class="code">mizaniya://add?amount=[Match1]&merchant=[Match2]</div></div></div></div>
     <div class="srow"><div class="sbdg">7</div><div><div class="stit">Save & Test</div><div class="sdsc">Save the automation. Next AlSalam SMS → tap <strong>Allow</strong> → budget updates instantly.</div></div></div>
   </div>
   <div class="slabel">Quick Test</div>
@@ -610,7 +610,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   applyTheme(S.theme||'light');
   if(S.setupDone){document.getElementById('SW').classList.add('gone');setTimeout(rAll,80);}
   const p=new URLSearchParams(location.search);
-  if(p.get('amount')&&S.setupDone){const a=parseFloat(p.get('amount')),m=decodeURIComponent(p.get('merchant')||'AlSalam Bank'),b=p.get('balance');if(a>0){addTxn(a,m,b);toast('🏦','AlSalam Synced',`−${a.toFixed(3)} BD at ${m}`);}}
+  if(p.get('amount')&&S.setupDone){const a=parseFloat(p.get('amount')),m=decodeURIComponent(p.get('merchant')||'AlSalam Bank');if(a>0){addTxn(a,m);toast('🏦','AlSalam Synced',`−${a.toFixed(3)} BD at ${m}`);}}
   if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
 });
 </script>
