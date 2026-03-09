@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__7e9c7d4a-bee4-434a-b35c-110f28fa4f9b__list_projects",
+      "mcp__7e9c7d4a-bee4-434a-b35c-110f28fa4f9b__get_project",
+      "mcp__7e9c7d4a-bee4-434a-b35c-110f28fa4f9b__get_deployment",
+      "mcp__7e9c7d4a-bee4-434a-b35c-110f28fa4f9b__get_deployment_build_logs",
+      "mcp__7e9c7d4a-bee4-434a-b35c-110f28fa4f9b__deploy_to_vercel",
+      "Bash(vercel deploy --prod)",
+      "Bash(gh repo create mizaniya --public --description \"Smart budget PWA. Clear mind.\" --source=. --remote=origin --push)",
+      "Bash(where gh)",
+      "Bash(winget --version)",
+      "Bash(winget install --id GitHub.cli -e --silent)",
+      "Bash(ssh -T git@github.com)"
+    ]
+  }
+}
