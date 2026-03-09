@@ -1,0 +1,19 @@
+{
+  "name": "Mizaniya",
+  "short_name": "Mizaniya",
+  "description": "Smart budget. Clear mind.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f9f5",
+  "theme_color": "#1c7d3c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
